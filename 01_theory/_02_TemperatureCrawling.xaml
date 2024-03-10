@@ -1,0 +1,178 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_02_TemperatureCrawling" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="564,1983.3333333333333" sap2010:WorkflowViewState.IdRef="_02_TemperatureCrawling_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="_02_TemperatureCrawling" sap:VirtualizedContainerService.HintSize="574,2306.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="inClass_Sequence" sap:VirtualizedContainerService.HintSize="512,2218.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="strCityName" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="1. 사용자에게 도시 이름을 입력하라는 메시지(Input Dialog)" DisplayName="CityName_Input Dialog" sap:VirtualizedContainerService.HintSize="450,331.3333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="도시 이름을 입력하시오" Title="질문">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">[strCityName]</OutArgument>
+        </ui:InputDialog.Result>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InputDialog>
+      <uix:NApplicationCard sap2010:Annotation.AnnotationText="2. 웹브라우저(크롬)를 열고 Google.com으로 이동(Use Browser) &#xA;    속성 &gt; 옵션 &gt; 닫기 &gt; Never&#xA;    속성 &gt; 옵션 &gt; 열기 &gt; IfNotOpen&#xA;    속성 &gt; 옵션 &gt; 창 크기 조정 &gt; 최대화" AttachMode="ByInstance" CloseMode="Never" DisplayName="inClass_Use Browser Chrome: Google" sap:VirtualizedContainerService.HintSize="450,1776.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="b9ef7497-ca45-4001-860e-aa65ec96340d" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence sap2010:Annotation.AnnotationText="3. 검색 창에 'city in'의 유형을 입력하고 검색(Type into)&#xA;    대상 UI 엘리먼트 지정&#xA;    엄격한 선택기 선택&#xA;    속성 &gt; 옵션 &gt; 입력 모드 &gt; 시뮬레이션 &#xA;        : 백그라운드 실행&#xA;    속성 &gt; 옵션 - 하드웨어 이벤트/Chromium API &gt; 비어있는 필드 &gt;&#xA;        Single Line&#xA;    속성 &gt; 옵션 - 하드웨어 이벤트/Chromium API &gt; &#xA;        입력하기 전에 클릭 &gt; Single&#xA;    속성 &gt; 타겟 &gt; Window Selector &gt; 미트볼 버튼 클릭 &gt; &#xA;        좌하단 UI Explorer에서 열기 &gt; 'Google'을 '*Google*' 로 &#xA;        변경하여 title에 Google이 들어가는 크롬윈도우 추적&#xA;    속성 &gt; 타겟 &gt; 엄격한 선택기 &gt; 미트볼 버튼 클릭 &gt; &#xA;        좌하단 UI Explorer에서 열기. 별도 속성 편집 불필요. &#xA;        ( 단, 크롬창이 꺼져있는 경우 속성이 나타나지 않음 &#xA;         -&gt; 크롬 열기 -&gt; 좌상단 엘리먼트 표시로 UI 엘리먼트 선택 )&#xA;    다음 입력 &gt; &quot;City in &quot; + strCityName &#xA;    다음 입력 우측 키 전송 클릭 &gt; Enter 전송&#xA;    입력하기 전에 필드 비우기 &gt; 한줄&#xA;    입력하기 전에 클릭 &gt; 단일" DisplayName="실행" sap:VirtualizedContainerService.HintSize="416,1416" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="strTemper" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="inClass_Type Into" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,262.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="b9ef7497-ca45-4001-860e-aa65ec96340d" Text="[&quot;City in &quot; + strCityName + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.google.com/" DesignTimeRectangle="925, 686, 606, 40" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='APjFqb' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl id='APjFqb' tag='TEXTAREA' type='' class='gLFyf' aaname='검색' /&gt;" Guid="45e666c2-a479-4aab-be8f-9c6efa1b8d95" InformativeScreenshot="6169b42731be1bd1c3fdba54e63f1278.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Google*' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NGetText sap2010:Annotation.AnnotationText="4. 날씨 데이터를 스크랩(Get Text)&#xA;    대상 UI 엘리먼트 지정 &#xA;    엄격한 선택기만 사용&#xA;    속성 &gt; 타겟 &gt; Window Selector &gt; &#xA;        미트볼 버튼 클릭 &gt; 좌하단 UI Explorer에서 열기&#xA;        &lt;html app='chrome.exe' title='CIty in paris &#xA;        - Google 검색' /&gt; 의 'CIty in paris - Google &#xA;        검색'을 '*Google*' 로 변경하여 title에 &#xA;        Google이 들어가는 크롬윈도우 추적&#xA;    속성 &gt; 타겟 &gt; 엄격한 선택기 &gt; 미트볼 버튼 클릭 &#xA;        &gt; 좌하단 UI Explorer에서 열기 ( 단, 크롬창이 &#xA;        꺼져있는 경우 속성이 나타나지 않음 -&gt; 크롬 &#xA;        열기 -&gt; 좌상단 엘리먼트 표시로 UI 엘리먼트 &#xA;        선택 )&#xA;        &gt; 속성 편집 &#xA;            aaname은 우리가 불러올 정보가 있는 &#xA;                위치로, 검색어에 따라 내용이 바뀜. &#xA;                기준으로 사용할 수 없음으로 제외&#xA;            class, tag, parentid, parentclass 선택&#xA;        &gt; 유효성 검사&#xA;    저장 위치에 불로온 정보를 저장할 변수 선언 및 &#xA;        입력" DisplayName="inClass_Get Text '기온 4°C,'" sap:VirtualizedContainerService.HintSize="354,578" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="b9ef7497-ca45-4001-860e-aa65ec96340d" TextString="[strTemper]" Version="V3">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=City+in+paris&amp;sca_esv=ffab6db64f2dfb10&amp;sxsrf=ACQVn0_UkA90voZoPIIoHue-hO8Vowjklw%3A1709771275642&amp;source=hp&amp;ei=CwrpZeqgJI3M2roPhb6C0AU&amp;iflsig=ANes7DEAAAAAZekYGx6nZEekke_nMZl0TXMdoNvD0_gs&amp;udm=&amp;ved=0ahUKEwiq0p2s8uCEAxUNplYBHQWfAFoQ4dUDCBc&amp;uact=5&amp;oq=City+in+paris&amp;gs_lp=Egdnd3Mtd2l6Ig1DaXR5IGluIHBhcmlzMgcQIxjqAhgnMgcQIxjqAhgnMgcQIxjqAhgnMgcQIxjqAhgnMgcQIxjqAhgnMgcQIxjqAhgnMgcQIxjqAhgnMgcQIxjqAhgnMgcQIxjqAhgnMgcQIxjqAhgnSKcBUFFYoQFwAXgAkAEAmAEAoAEAqgEAuAEDyAEA-AEBmAIBoAINqAIKmAMNkgcBMaAHAA&amp;sclient=gws-wiz" DesignTimeRectangle="1502, 770, 376, 23" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='SPAN' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' type='' class='LrzXr kno-fv wHYlTd z8gr9e' /&gt;" Guid="fdd05bf4-f9fa-4501-9ed8-8c142ad25fbd" InformativeScreenshot="5ca3061d78310a71b28ba3cc0ba8709c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Google*' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                </uix:NGetText.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NGetText>
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="5. 로그에 출력 (Write line)" AutoCloseAfter="00:00:00" DisplayName="inClass_Message Box" sap:VirtualizedContainerService.HintSize="354,142.66666666666666" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[strTemper]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:MessageBox>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-11, -11, 2582, 1390" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAARHSURBVFhHvZddbBRVFMf7YrAq+OSbD6Kgb0qUUh60xq9VtA8k1EJrH1CsGIM+GLUmBA0kFi0WSMCHLcVCTMO2GmjFCiUFpH60sUjMEtIGLaAWama32w92dt2vOf7PndPd3M7sdmobf8k/M/fec8//zJ07s7NFXrEsawlUnclkmqEBaAxKisLS14yYKo6VafMHyR5A4hYoTh5BbAw6iLnLJc3cQZ7bkKQRSttp5w7mpqBdKKRY0noDE+7HxEuSZ94gVxA5l0n6wiDwYUwIyVyN9I0RMls/p4l33qDwi8+R4VtNxjOlFF7no/G3XyfzcBOlR/6UaB3kNHBYITbuyJU7zNOj12ly+/tkPL2KjKdKCgsxkx++p+bMhIvIuxIYuB0BjmWPn+qi0Atl7mYFFCp/nP45e0qy5IAH3w7nnsBAo8RkMY8cck3uVVMN2yWTDrwaxNYGFfGjpu12vnK3pKxIbRVFD+yj+DdHKd51DOf7KfJatRYztbueyLIkmw68UtqtQEeLjCl4s4Wef0xLyBqrWUuJ8/0S5SQx0EfhDeV0c/+n0pMfeDYrc5zfiYb2konufdNhPr7lZbKmpiQiP5YZlbPCwNPEKizm5a+WPoUVG6ZU9yKarLsna86PXGYiIhELB7zX8/I3S1uRuVpPqZ5blMx9d1FozUqKnzwuowsLvP1cwIC0FelffNkCWImjS4lSKRldWODdzwWMSVuR6r1bKyB9sUpG3Hnyo6hnnb2kXwi8DS4gKW1F6vQirYDM79tkxB03o3xq/VGz4gIS/2sBLecSMstmuoCwtBWOWxDcICPuuBnlU3u/YwXULdA34YVntQJGeh+kZGbum/CKkXEUcG7QsQfUJpzxGH6cNT/etZQeDayljuEeGfVOoC/pKGB0Qn81w9vPLyJtm1uxqxTrKab6jkdoZWCdkq/jFQrHxyVidm7GLarYa2rmG/0xGc0B70ouYAkq0Ub39O3Imk+rpvtdmkjM/ipO4iet7khcM2e1Oe+/icMd6vcAjYN2t82NqEFlX73kKKL8683Ue/28RDm5PH6NNnUGYDipmfNqxBKO5W9S5gxWYTk6tB1y4lqvo4BpVXz7FjVeaKH2yyfoy99O0mfBVnq1ZyuVBCrUeOmhOnrik7+yBXw/pH/XwisJz/vE3gadu2Q8yxdDnQ5zrypp3Uhlu392PPsMvHaKbQ7082f4RTskR/cfP+B21LiaFFJpWyUdCHZKlhzw+BWHW8VWB8uyDAH89aoxaoZo6097aFWbvcSzafOZD2gwMiyzcyD33zjcK3buIGCFWxEMb87Dg8doy3c7aE1nLa1ur1RX6uvYRLWnt6m9MBS5ItE6bI4LfEhsCiMrEZS58wa5eNkLX/lMUEQxJjZA//ljAHP5j+tOnLrfcy/IavA/Yn5xeIJjoSbM1R+1+YBki6H1SOyH+iEDSoj4nPv8iKlEDfYbblaKiv4FoeF/NqqvoEMAAAAASUVORK5CYII=" InformativeScreenshot="40972ebd0e3eb09b828e93af5844d4bc.jpg" Selector="&lt;html app='chrome.exe' title='Google' /&gt;" Title="Google" Url="https://www.google.com/" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
