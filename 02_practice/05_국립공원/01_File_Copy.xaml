@@ -1,4 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_ex_out" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1283.3333333333333,766.6666666666666" sap2010:WorkflowViewState.IdRef="_ex_out_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_01_File_Copy" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_strExcelPath" Type="OutArgument(x:String)" />
+    <x:Property Name="in_strExcelPath" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>988,694</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>_01_File_Copy_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -57,9 +66,9 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
@@ -73,44 +82,26 @@
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_ex_out" sap:VirtualizedContainerService.HintSize="416,702" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="데이터테이블 연결하기&#xD;&#xA;&#xD;&#xA;입력받은 xlsx 파일의 경로를 가지고, 경로상 파일명의 '.xlsx'를 '_최준영.xlsx' 로 변경하여 다른 이름으로 복사 한 후, 복사한 파일의 경로를 반환함.&#xD;&#xA; &#xD;&#xA;EX) &#xD;&#xA;입력 - &quot;국립공원\산이름_JoinDT.xlsx&quot; &#xD;&#xA;Copy File - 복사한 파일명 : &quot;산이름_JoinDT_최준영.xlsx&quot;&#xD;&#xA;반환 - &quot;국립공원\산이름_JoinDT_최준영.xlsx&quot;" DisplayName="_01_File_Copy" sap:VirtualizedContainerService.HintSize="496,557.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="var_into">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">pre_data</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="var_outto">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">post_data</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Name="orgin_ExcelPath" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,132" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;pre_main : &quot; + var_into + &quot;, &quot; + var_outto]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="밖의 변수를, 가져온 플로우의 입력 인수로 매칭 시 -&gt; 플로우 진행 전에, 밖의 변수가 플로우 안의 인수로 할당된다.&#xD;&#xA;&#xD;&#xA;밖의 변수를, 가져온 플로우의 출력 인수로 매칭 시 -&gt; 플로우 진행 후에, 플로우 밖의 인수가 밖의 변수로 할당된다.&#xD;&#xA;&#xD;&#xA;밖의 변수를, 가져온 플로우의 입력/출력 인수로 매칭 시 -&gt; 플로우 진행 전에, 밖의 변수가 플로우 안의 인수로 할당되고, 플로우 진행 후에, 플로우 안의 인수가 밖의 변수로 할당된다. " DisplayName="02_practice\_05_Factor\_ex_in.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,367.3333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="02_practice\_05_Factor\_ex_in.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="var_post">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="var_outto" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="var_pre">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="var_into" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:InvokeWorkflowFile>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,114.66666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;post_main : &quot; + var_into + &quot;, &quot; + var_outto]" />
+    <Assign sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_strExcelPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_strExcelPath.Replace(".xlsx", "_최준영.xlsx")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[out_strExcelPath]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_strExcelPath]" />
   </Sequence>
 </Activity>
