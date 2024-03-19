@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_00_Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1284,1349.3333333333333" sap2010:WorkflowViewState.IdRef="_00_Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_00_Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1284,1216" sap2010:WorkflowViewState.IdRef="_00_Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -34,6 +34,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -91,7 +92,7 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="&#xA;- 두 DT를 결합 및 가공하여 Result 시트에 기입한다.&#xA;&#xA;- 가공 규칙1: dt탐방코스와 dt국립공원에서 산이름 컬럼의 값이 같을 때 결합&#xA;- 가공 규칙2: 결합한 새로운 DT에서 탐방코스 컬럼에 값이 비어있는 행 삭제&#xA;- 가공 규칙3: 산이름 오름차순 정렬" DisplayName="_00_Main" sap:VirtualizedContainerService.HintSize="558,1284.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="&#xA;- 두 DT를 결합 및 가공하여 Result 시트에 기입한다.&#xA;&#xA;- 가공 규칙1: dt탐방코스와 dt국립공원에서 산이름 컬럼의 값이 같을 때 결합&#xA;- 가공 규칙2: 결합한 새로운 DT에서 탐방코스 컬럼에 값이 비어있는 행 삭제&#xA;- 가공 규칙3: 산이름 오름차순 정렬" DisplayName="_00_Main" sap:VirtualizedContainerService.HintSize="610.6666666666666,1151.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strCopyExcelPath">
         <Variable.Default>
@@ -108,7 +109,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="origin_strExcelPath = 사용하려는 원본 데이터 파일의 경로를 str으로 직접 입력&#xA;&#xA;copy_strExcelPath = 00_File_Copy 모듈에서 원본 파일을 복사하여 다른 제목으로 저장 후, 해당 경로를 반환" DisplayName="Copy File | Sequence" sap:VirtualizedContainerService.HintSize="496,639.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence sap2010:Annotation.AnnotationText="origin_strExcelPath = 사용하려는 원본 데이터 파일의 경로를 str으로 직접 입력&#xA;&#xA;copy_strExcelPath = 00_File_Copy 모듈에서 원본 파일을 복사하여 다른 제목으로 저장 후, 해당 경로를 반환" DisplayName="Copy File | Sequence" sap:VirtualizedContainerService.HintSize="548.6666666666666,160.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_12">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strOriginExcelPath">
           <Variable.Default>
@@ -118,12 +119,12 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="input File Path | Assign" sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="input File Path | Assign" sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strOriginExcelPath]</OutArgument>
         </Assign.To>
@@ -131,7 +132,7 @@
           <InArgument x:TypeArguments="x:String">국립공원\산이름_JoinDT.xlsx</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Def returnFilePath | Assign" sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign DisplayName="Def returnFilePath | Assign" sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strCopyExcelPath]</OutArgument>
         </Assign.To>
@@ -141,7 +142,7 @@
       </Assign>
       <ui:CopyFile ContinueOnError="{x:Null}" Destination="[strCopyExcelPath]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[strOriginExcelPath]" />
     </Sequence>
-    <Sequence DisplayName="Create DT | Sequence" sap:VirtualizedContainerService.HintSize="496,65.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Create DT | Sequence" sap:VirtualizedContainerService.HintSize="548.6666666666666,65.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -152,39 +153,110 @@
       <ui:ReadRange AddHeaders="True" DataTable="[dtCourseInfo]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="388,128" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="A1" SheetName="탐방코스" WorkbookPath="02_practice\05_국립공원\산이름_JoinDT.xlsx" />
       <ui:BuildDataTable DataTable="[dtResult]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="388,82.66666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;산이름&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;지역&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;탐방코스1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;탐방코스2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;탐방코스3&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;탐방코스4&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
     </Sequence>
-    <Sequence DisplayName="Combine DT | Sequence" sap:VirtualizedContainerService.HintSize="496,65.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Combine DT | Sequence" sap:VirtualizedContainerService.HintSize="548.6666666666666,65.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:JoinDataTables DataTable1="[dtCourseInfo]" DataTable2="[dtParkInfo]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="388,100" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Inner" OutputDataTable="[dtResult]">
-        <ui:JoinDataTables.Arguments>
-          <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
-            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
-              <ui:JoinOperationArgument.Column1>
-                <InArgument x:TypeArguments="x:String">["산이름"]</InArgument>
-              </ui:JoinOperationArgument.Column1>
-              <ui:JoinOperationArgument.Column2>
-                <InArgument x:TypeArguments="x:String">["산이름"]</InArgument>
-              </ui:JoinOperationArgument.Column2>
-            </ui:JoinOperationArgument>
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtParkInfo]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,48" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="ParkInfoRow" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="416,22" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCourseInfo]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="546,838" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CourseInfoRow" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="512,647.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[ParkInfoRow(&quot;산이름&quot;).ToString.Equals(CourseInfoRow(&quot;산이름&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="450,562.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,298.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ParkInfoRow(&quot;산이름&quot;), ParkInfoRow(&quot;지역&quot;), CourseInfoRow(&quot;탐방코스1&quot;), CourseInfoRow(&quot;탐방코스2&quot;), CourseInfoRow(&quot;탐방코스3&quot;), CourseInfoRow(&quot;탐방코스4&quot;)}]" DataTable="[dtResult]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="354,214" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,101.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEachRow>
+    </Sequence>
+    <Sequence DisplayName="Sort DT | Sequence" sap:VirtualizedContainerService.HintSize="548.6666666666666,410.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:MultipleAssign sap2010:Annotation.AnnotationText="&lt;여러개의 컬럼으로 정렬을 할 때&gt;&#xA;&#xA;dt결과.DefaultView.Sort = &quot;[산이름] ASC&quot;&#xA;dt결과 = dt결과.DefaultView.ToTable&#xA;&#xA;&quot;[산이름] ASC, [지역] ASC&quot; - 여러 칼럼 순차 정렬 적용 시" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.3333333333333,282.6666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[dtResult.DefaultView.Sort]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[산이름] ASC</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dtResult]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[dtResult.DefaultView.ToTable]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
           </scg:List>
-        </ui:JoinDataTables.Arguments>
-      </ui:JoinDataTables>
-      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="산이름_1" DataTable="[dtResult]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="388,214" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
+        </ui:MultipleAssign.AssignOperations>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MultipleAssign>
     </Sequence>
-    <Sequence DisplayName="Sort DT | Sequence" sap:VirtualizedContainerService.HintSize="496,65.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="산이름" DataTable="[dtResult]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="388,104.66666666666667" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[dtResult]" SortOrder="Ascending" />
-    </Sequence>
-    <Sequence DisplayName="Write Excel | Sequence" sap:VirtualizedContainerService.HintSize="496,249.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="Write Excel | Sequence" sap:VirtualizedContainerService.HintSize="548.6666666666666,249.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
